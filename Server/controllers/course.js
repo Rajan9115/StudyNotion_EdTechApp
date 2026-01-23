@@ -1,9 +1,9 @@
 const Category = require('../models/category');
-const Course = require('../models/Courses');
+const Course = require('../models/courses');
 const {uploadFileToCloudinary} = require('../utils/fileUploader');
 const { populate } = require('../models/profile');
-const Section = require('../models/Section');
-const SubSection = require('../models/SubSection');
+const Section = require('../models/section');
+const SubSection = require('../models/subSection');
 const User = require("../models/user")
 
 const CourseProgress = require("../models/courseProgress")

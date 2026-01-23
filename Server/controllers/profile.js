@@ -3,7 +3,7 @@ const User = require('../models/user');
 const cloudinary = require('cloudinary').v2;
 const CourseProgress = require("../models/courseProgress")
 
-const Course = require("../models/Courses")
+const Course = require("../models/courses")
 const { uploadFileToCloudinary } = require("../utils/fileUploader")
 const mongoose = require("mongoose")
 const { convertSecondsToDuration } = require("../utils/secToDuration")

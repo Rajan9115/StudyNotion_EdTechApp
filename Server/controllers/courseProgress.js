@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
-const Section = require("../models/Section")
-const SubSection = require("../models/SubSection")
+const Section = require("../models/section")
+const SubSection = require("../models/subSection")
 const CourseProgress = require("../models/courseProgress")
-const Course = require("../models/Courses")
+const Course = require("../models/courses")
 
 exports.updateCourseProgress = async (req, res) => {
   const { courseId, subsectionId } = req.body
