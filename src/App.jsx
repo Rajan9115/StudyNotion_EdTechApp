@@ -1,4 +1,4 @@
-import "./app.css";
+import "./App.css";
 
 import{Route,Routes,useNavigate} from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
