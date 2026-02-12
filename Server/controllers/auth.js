@@ -10,6 +10,17 @@ require('dotenv').config();
 
 
 
+//fn to send mail
+async function sendVerificationEmail(email,otp) {
+    try{
+        const htmlContent = otpMailTemplate(otp);
+        const mailResponse = await mailSender(email,"Verification Email from Studynotion",htmlContent) ;
+        console.log("Email sent successfull",mailResponse);
+    }catch(err){
+        console.log("Error while sending otp email",err);
+    }
+}
+
 //send otp
 exports.sendOtp = async (req,res) => {
     try{
@@ -30,6 +41,8 @@ exports.sendOtp = async (req,res) => {
         console.log("Secure OTP:", otp);
         //store otp in db
         const newOtp = await OTP.create({email,otp});
+         // Send email in background
+        sendVerificationEmail(email, otp);
         return res.status(200).json({
             success:true,
             message:"OTP sent to your email",
