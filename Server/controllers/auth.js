@@ -29,7 +29,7 @@ exports.sendOtp = async (req,res) => {
         const otp = crypto.randomInt(100000, 1000000).toString(); 
         console.log("Secure OTP:", otp);
         //store otp in db
-        const newOtp = OTP.create({email,otp});
+        const newOtp = await OTP.create({email,otp});
         return res.status(200).json({
             success:true,
             message:"OTP sent to your email",
